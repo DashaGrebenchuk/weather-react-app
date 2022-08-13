@@ -14,32 +14,6 @@ export default function Footer() {
           open-sourced on GitHub{" "}
         </a>
       </div>
-      <div className="footer-icons">
-        <a
-          href="https://www.instagram.com/mymeamors/"
-          className="inst-link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fa-brands fa-instagram inst-icon"></i>
-        </a>
-        <a
-          className="fb-link"
-          target="_blank"
-          href="https://www.facebook.com/darya.malevanchenko"
-          rel="noreferrer"
-        >
-          <i className="fa-brands fa-facebook fb-icon"></i>
-        </a>
-        <a
-          className="lnk-link"
-          target="_blank"
-          href="https://www.linkedin.com/in/dgrebenchuk/"
-          rel="noreferrer"
-        >
-          <i className="fa-brands fa-linkedin lnk-icon"></i>
-        </a>
-      </div>
     </div>
   );
 }

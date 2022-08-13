@@ -1,0 +1,152 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/035/375/original/sky-blue-pink-1.jpg?1653598841);
+  background-repeat: no-repeat;
+  height: 100%;
+  padding-top: 40px;
+}
+h1.main-city {
+  font-size: 60px;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.search-tab {
+  max-width: 700px;
+  margin: 0 auto;
+}
+button.search-button,
+button.current-button {
+  background-color: rgba(166, 150, 200, 0.5);
+}
+
+div.card-box {
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px 30px 30px 60px;
+  margin: 0 auto;
+  max-width: 700px;
+  background-color: rgba(150, 129, 196, 0.5);
+}
+
+p.current-date {
+  font-weight: lighter;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0;
+}
+h2.current-temp {
+  font-size: 70px;
+  font-weight: 300;
+  color: white;
+}
+
+.celcius-link,
+#line,
+.fahrenheit-link {
+  position: relative;
+  bottom: 22px;
+  font-size: 32px;
+  text-decoration: none;
+  color: #dca2d9;
+}
+.celcius-link:hover {
+  color: white;
+}
+.fahrenheit-link:hover {
+  color: white;
+}
+.current-temp .active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+
+#line {
+  color: white;
+  font-size: 28px;
+  position: relative;
+  bottom: 24px;
+}
+h4.day-temp {
+  font-weight: lighter;
+  color: white;
+}
+.icon {
+  width: 80px;
+  margin-bottom: 60px;
+  position: relative;
+  left: 8px;
+}
+h3.description {
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+.main-card {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.forecast-info {
+  font-weight: 300;
+  font-style: oblique;
+  color: white;
+  margin-bottom: 24px;
+}
+.forecast {
+  color: white;
+  text-align: center;
+}
+.secondary-icons {
+  width: 40px;
+  display: block;
+  margin: 15px auto 5px;
+}
+.forecast-temp {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: lighter;
+}
+
+.footer {
+  font-family: "PT Mono", monospace;
+  text-align: center;
+  font-size: 14px;
+  font-weight: lighter;
+  padding-top: 26px;
+}
+.link-github {
+  text-decoration: none;
+  color: #795894;
+}
+.link-github:hover {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
+  div.card-box {
+    padding: 10px 20px 20px 10px;
+  }
+  h2.current-temp {
+    font-size: 60px;
+    padding-left: 17px;
+    padding-top: 116px;
+  }
+  .fahrenheit-link,
+  #line {
+    display: none;
+  }
+  h4.day-temp,
+  .forecast-info {
+    padding-left: 17px;
+  }
+  #icon {
+    position: relative;
+    left: 40px;
+  }
+}

@@ -1,10 +1,11 @@
 import "./App.css";
 import Footer from "./Footer";
+import Weather from "./Weather";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello from App</h1>
+      <Weather />
       <Footer />
     </div>
   );
