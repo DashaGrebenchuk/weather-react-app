@@ -3,6 +3,7 @@ import axios from "axios";
 import icon from "./icons_new/03d.png";
 import "./Weather.css";
 import { InfinitySpin } from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherdata, setWeatherdata] = useState({ ready: false });
@@ -16,7 +17,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       city: response.data.name,
-      date: "Tuesday 16:21",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -53,7 +54,9 @@ export default function Weather(props) {
           <div className="row">
             <div className="col-6">
               <h1 className="main-city">{weatherdata.city}</h1>
-              <p className="current-date">{weatherdata.date}</p>
+              <h2 className="current-date">
+                <FormattedDate date={weatherdata.date} />
+              </h2>
               <h3 className="description">{weatherdata.description}</h3>
               <img src={icon} alt={weatherdata.description} className="icon" />
             </div>

@@ -32,7 +32,7 @@ div.card-box {
   background-color: rgba(150, 129, 196, 0.5);
 }
 
-p.current-date {
+h2.current-date {
   font-weight: lighter;
   font-size: 20px;
   color: white;
