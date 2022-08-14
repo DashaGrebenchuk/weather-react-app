@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import icon from "./icons_new/03d.png";
+
 import "./Weather.css";
 import { InfinitySpin } from "react-loader-spinner";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
+  const [city, setCity] = useState(props.city);
   const [weatherdata, setWeatherdata] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -23,20 +25,28 @@ export default function Weather(props) {
 
   function search() {
     const apiKey = `4fb36667f50c716efb0c9e559b5b7ffe`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+    search();
   }
 
   if (weatherdata.ready) {
     return (
       <div className="container">
-        <form className="input-group mb-3 search-tab">
+        <form className="input-group mb-3 search-tab" onSubmit={handleSubmit}>
           <input
             type="text"
             className="form-control shadow"
             placeholder="Enter a city"
             autoComplete="off"
             autoFocus="on"
+            onChange={handleCityChange}
           />
           <button
             className="btn btn-outline-light search-button shadow"
@@ -49,35 +59,7 @@ export default function Weather(props) {
             Current location
           </button>
         </form>
-
-        <div className="card-box">
-          <div className="row">
-            <div className="col-6">
-              <h1 className="main-city">{weatherdata.city}</h1>
-              <h2 className="current-date">
-                <FormattedDate date={weatherdata.date} />
-              </h2>
-              <h3 className="description">{weatherdata.description}</h3>
-              <img src={icon} alt={weatherdata.description} className="icon" />
-            </div>
-            <div className="col-6 main-temp">
-              <h2 className="current-temp">
-                {Math.round(weatherdata.temperature)}
-                <a href="/" className="active celcius-link">
-                  °C{" "}
-                </a>
-              </h2>
-              <h4 className="day-temp">
-                <strong>{Math.round(weatherdata.temperature)}°</strong>/ 17°
-              </h4>
-              <p className="forecast-info">
-                Wind: {Math.round(weatherdata.wind)} m/s
-                <br />
-                Humidity: {weatherdata.humidity} %
-              </p>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherdata} />
       </div>
     );
   } else {
