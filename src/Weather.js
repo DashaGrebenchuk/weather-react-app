@@ -7,11 +7,10 @@ import { InfinitySpin } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
-  const [city, setCity] = useState(props.city);
   const [weatherdata, setWeatherdata] = useState({ ready: false });
+  const [city, setCity] = useState(props.city);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherdata({
       ready: true,
       temperature: response.data.main.temp,
@@ -22,18 +21,18 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
     });
   }
-
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
   function search() {
     const apiKey = `4fb36667f50c716efb0c9e559b5b7ffe`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+
   function handleCityChange(event) {
     setCity(event.target.value);
-    search();
   }
 
   if (weatherdata.ready) {
