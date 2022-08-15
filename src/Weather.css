@@ -76,7 +76,6 @@ h4.day-temp {
   color: white;
 }
 .icon {
-  width: 80px;
   margin-bottom: 60px;
   position: relative;
   left: 8px;
@@ -85,7 +84,7 @@ h3.description {
   color: white;
   font-weight: lighter;
   font-size: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-transform: capitalize;
 }
 .main-card {
@@ -129,16 +128,23 @@ h3.description {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  h1.main-city {
     text-align: center;
+    font-size: 54px;
   }
   div.card-box {
     padding: 10px 20px 20px 10px;
+  }
+  h3.description {
+    text-align: center;
   }
   h2.current-temp {
     font-size: 60px;
     padding-left: 17px;
     padding-top: 116px;
+  }
+  div.FormattedDate {
+    text-align: center;
   }
   .fahrenheit-link,
   #line {
@@ -148,7 +154,7 @@ h3.description {
   .forecast-info {
     padding-left: 17px;
   }
-  #icon {
+  .icon {
     position: relative;
     left: 40px;
   }
