@@ -1,0 +1,20 @@
+.Forecast {
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.Forecast-day {
+  margin-bottom: 10px;
+}
+.Forecast-max-temp,
+.Forecast-min-temp {
+  font-size: 18px;
+}
+.Forecast-max-temp {
+  font-weight: bolder;
+}
+.Forecast-min-temp {
+  margin-left: 5px;
+}

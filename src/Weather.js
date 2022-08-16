@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Forecast from "./Forecast";
 import "./Weather.css";
 import { InfinitySpin } from "react-loader-spinner";
 
@@ -59,7 +59,10 @@ export default function Weather(props) {
             Current location
           </button>
         </form>
-        <WeatherInfo data={weatherdata} />
+        <div className="card-box">
+          <WeatherInfo data={weatherdata} />
+          <Forecast />
+        </div>
       </div>
     );
   } else {
