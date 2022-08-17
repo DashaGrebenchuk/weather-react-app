@@ -21,6 +21,8 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
+      highest: response.data.main.temp_max,
+      lowest: response.data.main.temp_min,
     });
   }
   function handleSubmit(event) {

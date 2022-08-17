@@ -23,7 +23,8 @@ export default function WeatherInfo(props) {
           </a>
         </h2>
         <h4 className="day-temp">
-          <strong>{Math.round(props.data.temperature)}°</strong>/ 17°
+          <strong>{Math.round(props.data.highest)}°</strong>/
+          {Math.round(props.data.lowest)} °
         </h4>
         <p className="forecast-info">
           Wind: {Math.round(props.data.wind)} m/s

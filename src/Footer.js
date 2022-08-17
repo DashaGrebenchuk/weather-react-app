@@ -11,7 +11,7 @@ export default function Footer() {
           className="link-github"
           rel="noreferrer"
         >
-          open-sourced on GitHub{" "}
+          open-sourced on GitHub
         </a>
       </div>
     </div>

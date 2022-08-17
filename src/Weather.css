@@ -44,9 +44,7 @@ h2.current-temp {
   color: white;
 }
 
-.celcius-link,
-#line,
-.fahrenheit-link {
+.celcius-link {
   position: relative;
   bottom: 22px;
   font-size: 32px;
@@ -56,21 +54,13 @@ h2.current-temp {
 .celcius-link:hover {
   color: white;
 }
-.fahrenheit-link:hover {
-  color: white;
-}
+
 .current-temp .active {
   color: white;
   cursor: default;
   text-decoration: none;
 }
 
-#line {
-  color: white;
-  font-size: 28px;
-  position: relative;
-  bottom: 24px;
-}
 h4.day-temp {
   font-weight: lighter;
   color: white;
@@ -145,10 +135,6 @@ h3.description {
   }
   div.FormattedDate {
     text-align: center;
-  }
-  .fahrenheit-link,
-  #line {
-    display: none;
   }
   h4.day-temp,
   .forecast-info {
